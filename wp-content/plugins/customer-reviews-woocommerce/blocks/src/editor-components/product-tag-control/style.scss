@@ -1,0 +1,27 @@
+// Hide an element from sighted users, but available to screen reader users.
+@mixin visually-hidden() {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	overflow: hidden;
+	/* Many screen reader and browser combinations announce broken words as they would appear visually. */
+	overflow-wrap: normal !important;
+	word-wrap: normal !important;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+}
+
+.woocommerce-product-tags__operator {
+	.components-base-control__help {
+		@include visually-hidden;
+	}
+
+	.components-base-control__label {
+		margin-bottom: 0;
+		margin-right: 0.5em;
+	}
+}

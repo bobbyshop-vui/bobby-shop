@@ -1,0 +1,241 @@
+@use 'sass:math';
+
+$gap: 16px;
+$gap-small: 12px;
+$gap-smaller: 8px;
+$gap-smallest: 4px;
+$studio-white: #fff;
+$gray-900: #1e1e1e;
+$gray-700: #757575;
+$gray-200: #e0e0e0;
+$gray-100: #f0f0f0;
+
+@mixin hover-state {
+	&:hover,
+	&:active,
+	&:focus {
+		@content;
+	}
+}
+
+.cr-search-list {
+	width: 100%;
+	padding: 0 0 $gap;
+	text-align: left;
+}
+
+.cr-search-list__selected {
+	margin: $gap 0;
+	padding: $gap 0 0;
+	// 76px is the height of 1 row of tags.
+	// min-height: 76px;
+	border-top: 1px solid $gray-100;
+
+	.cr-search-list__selected-header {
+		margin-bottom: $gap-smaller;
+
+		button {
+			margin-left: $gap-small;
+		}
+	}
+
+	.cr-tag__text {
+		max-width: 13em;
+	}
+
+	ul {
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+
+		li {
+			float: left;
+		}
+	}
+}
+
+.cr-search-list__search {
+	margin: $gap 0;
+	padding: $gap 0 0;
+	border-top: 1px solid $gray-100;
+
+	.components-base-control__field {
+		margin-bottom: $gap;
+	}
+}
+
+.cr-search-list__list {
+	border: 1px solid $gray-200;
+	padding: 0;
+	max-height: 17em;
+	overflow-x: hidden;
+	overflow-y: auto;
+
+	li {
+		margin-bottom: 0;
+	}
+
+	&.is-loading {
+		padding: $gap-small 0;
+		text-align: center;
+		border: none;
+	}
+
+	&.is-not-found {
+		padding: $gap-small 0;
+		text-align: center;
+		border: none;
+
+		.cr-search-list__not-found-icon,
+		.cr-search-list__not-found-text {
+			display: inline-block;
+		}
+
+		.cr-search-list__not-found-icon {
+			margin-right: $gap;
+
+			.gridicon {
+				vertical-align: top;
+				margin-top: -1px;
+			}
+		}
+	}
+
+	.components-spinner {
+		float: none;
+		margin: 0 auto;
+	}
+
+	& > [role='menu'] {
+		border: 1px solid $gray-100;
+		border-bottom: none;
+	}
+
+	.cr-search-list__item {
+		display: flex;
+		align-items: center;
+		margin-bottom: 0;
+		padding: $gap-small $gap;
+		background: $studio-white;
+		// !important to keep the border around on hover
+		border-bottom: 1px solid $gray-100;
+		color: $gray-700;
+
+		@include hover-state {
+			background: $gray-100;
+		}
+
+		&:active,
+		&:focus {
+			box-shadow: none;
+		}
+
+		.cr-search-list__item-input {
+			margin: 0 $gap-smaller 0 0;
+		}
+
+		.cr-search-list__item-label {
+			display: flex;
+			flex: 1;
+		}
+
+		&.depth-0 + .depth-1 {
+			// Hide the border on the preceding list item
+			margin-top: -1px;
+		}
+
+		&:not(.depth-0) {
+			border-bottom: 0 !important;
+		}
+
+		&:not(.depth-0) + .depth-0 {
+			border-top: 1px solid $gray-100;
+		}
+
+		// Anything deeper than 5 levels will use this fallback depth
+		&[class*='depth-'] .cr-search-list__item-label::before {
+			margin-right: $gap-smallest;
+			content: str-repeat('— ', 5);
+		}
+
+		&.depth-0 .cr-search-list__item-label::before {
+			content: '';
+		}
+
+		@for $i from 1 to 5 {
+			&.depth-#{$i} .cr-search-list__item-label::before {
+				content: str-repeat('— ', $i);
+			}
+		}
+
+		.cr-search-list__item-name {
+			display: inline-block;
+		}
+
+		.cr-search-list__item-prefix {
+			display: none;
+			color: $gray-700;
+		}
+
+		&.is-searching,
+		&.is-skip-level {
+			.cr-search-list__item-label {
+				// Un-flex the label, so the prefix (breadcrumbs) and name are aligned.
+				display: inline-block;
+			}
+
+			.cr-search-list__item-prefix {
+				display: inline;
+
+				&::after {
+					margin-right: $gap-smallest;
+					content: ' ›';
+				}
+			}
+		}
+
+		&.is-searching {
+			.cr-search-list__item-name {
+				color: $gray-900;
+			}
+		}
+
+		&.has-count {
+			> .components-menu-item__item {
+				width: 100%;
+			}
+		}
+
+		.cr-search-list__item-count {
+			flex: 0 1 auto;
+			padding: math.div($gap-smallest, 2) $gap-smaller;
+			border: 1px solid $gray-100;
+			border-radius: 12px;
+			font-size: 0.8em;
+			line-height: 1.4;
+			color: $gray-700;
+			background: $studio-white;
+			white-space: nowrap;
+		}
+	}
+
+	li:last-child .cr-search-list__item {
+		border-bottom: none;
+	}
+}
+
+.cr-search-list.is-compact {
+	.cr-search-list__selected {
+		margin: 0 0 $gap;
+		padding: 0;
+		border-top: none;
+		// 54px is the height of 1 row of tags in the sidebar.
+		min-height: 54px;
+	}
+
+	.cr-search-list__search {
+		margin: 0 0 $gap;
+		padding: 0;
+		border-top: none;
+	}
+}

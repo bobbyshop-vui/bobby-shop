@@ -1,0 +1,11 @@
+.customize-control-o2-range-slider .customize-control-title {
+	margin-bottom: 10px;
+}
+
+.customize-control-o2-range-slider .o2-range-slider input[type='range'] {
+	margin-bottom: 14px;
+}
+
+.customize-control-o2-range-slider input[type=radio]:checked.o2-range-slider-buttonset + label {
+	transform: translateY(0);
+}

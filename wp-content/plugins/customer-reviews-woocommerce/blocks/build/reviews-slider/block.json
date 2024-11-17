@@ -1,0 +1,114 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "cusrev/reviews-slider",
+	"version": "1.0.0",
+	"title": "Reviews Slider",
+	"category": "widgets",
+	"icon": "slides",
+	"description": "Display a slider with product and store reviews.",
+	"attributes": {
+		"count": {
+			"type": "number",
+			"default": 3
+		},
+		"slides_to_show": {
+			"type": "number",
+			"default": 3
+		},
+		"show_products": {
+			"type": "boolean",
+			"default": true
+		},
+		"product_links": {
+			"type": "boolean",
+			"default": true
+		},
+		"min_chars": {
+			"type": "number",
+			"default": 0
+		},
+		"max_chars": {
+			"type": "number",
+			"default": 0
+		},
+		"sort_by": {
+			"type": "string",
+			"default": "date",
+			"enum": [ "date", "rating" ]
+		},
+		"sort": {
+			"type": "string",
+			"default": "DESC",
+			"enum": [ "ASC", "DESC", "RAND" ]
+		},
+		"categories": {
+			"type": "array",
+			"default": []
+		},
+		"products": {
+			"type": "array",
+			"default": []
+		},
+		"product_tags": {
+			"type": "array",
+			"default": []
+		},
+		"color_ex_brdr": {
+			"type": "string",
+			"default": "#ebebeb"
+		},
+		"color_brdr": {
+			"type": "string",
+			"default": "#ebebeb"
+		},
+		"color_ex_bcrd": {
+			"type": "string",
+			"default": ""
+		},
+		"color_bcrd": {
+			"type": "string",
+			"default": "#ffffff"
+		},
+		"color_pr_bcrd": {
+			"type": "string",
+			"default": "#f4f4f4"
+		},
+		"color_stars": {
+			"type": "string",
+			"default": "#FFD707"
+		},
+		"shop_reviews": {
+			"type": "boolean",
+			"default": false
+		},
+		"count_shop_reviews": {
+			"type": "number",
+			"default": 1
+		},
+		"inactive_products": {
+			"type": "boolean",
+			"default": false
+		},
+		"autoplay": {
+			"type": "boolean",
+			"default": false
+		},
+		"avatars": {
+			"type": "string",
+			"default": "initials",
+			"enum": [ "initials", "standard", "false" ]
+		},
+		"show_dots": {
+			"type": "boolean",
+			"default": true
+		},
+		"tag_ids": {
+			"type": "array",
+			"default": []
+		}
+	},
+	"textdomain": "customer-reviews-woocommerce",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./style-index.css"
+}

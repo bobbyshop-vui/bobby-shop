@@ -1,0 +1,38 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "cusrev/trust-badge",
+	"version": "1.0.0",
+	"title": "Trust Badge",
+	"category": "widgets",
+	"icon": "star-filled",
+	"description": "Display a Trust Badge with a summary of product and store reviews.",
+	"attributes": {
+		"badge_size": {
+			"type": "string",
+			"enum": [ "small", "wide", "compact" ],
+			"default": "small"
+		},
+		"badge_style": {
+			"type": "string",
+			"enum": [ "light", "dark" ],
+			"default": "light"
+		},
+		"store_rating": {
+			"type": "boolean",
+			"default": false
+		},
+		"badge_border": {
+			"type": "boolean",
+			"default": true
+		},
+		"badge_color": {
+			"type": "string",
+			"default": "#ffffff"
+		}
+	},
+	"textdomain": "customer-reviews-woocommerce",
+	"editorScript": "file:./index.js",
+	"editorStyle": [ "file:./index.css", "cr-badges-css" ],
+	"style": "cr-badges-css"
+}

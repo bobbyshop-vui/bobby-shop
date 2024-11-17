@@ -1,0 +1,72 @@
+.topGrid {
+  @media (max-width: $mantine-breakpoint-xs) {
+    width: 100%;
+  }
+}
+.title {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.icon {
+  color: var(--mantine-color-dimmed);
+}
+.value {
+  font-size: rem(20px);
+  font-weight: 600;
+  line-height: 1;
+}
+.stat {
+  border-bottom: rem(3px) solid;
+  padding-bottom: rem(5px);
+  border-bottom-color: red;
+}
+.stat.chartColor1 {
+  border-bottom-color: #7B79E2;
+}
+.stat.chartColor2 {
+  border-bottom-color: #DA8FCC;
+}
+.statCount {
+  font-family:
+    Greycliff CF,
+    var(--mantine-font-family);
+}
+.statCount.chartColor1 {
+  color: #7B79E2;
+}
+.statCount.chartColor2 {
+  color: #DA8FCC;
+}
+.progressLabel {
+  font-family:
+    Greycliff CF,
+    var(--mantine-font-family);
+  line-height: 1;
+  font-size: var(--mantine-font-size-xs);
+}
+.progressBox .chartColor1,
+.progressWithSegments .chartColor1 {
+  background-color: #7B79E2;
+}
+.progressBox .chartColor2,
+.progressWithSegments .chartColor2 {
+  background-color: #DA8FCC;
+}
+.card {
+  background: #F4F4F4;
+}
+.cardActive.card {
+  border-color: #A46498;
+}
+.skel::before {
+  background-color: #f9f9f9;
+}
+.skel::after {
+  background-color: #E1E1E1;
+}
+.skelDescr {
+  padding-bottom: rem(8px);
+}
+.channelDesc {
+  line-height: var(--mantine-line-height-xs);
+}
