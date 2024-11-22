@@ -286,4 +286,31 @@ add_filter('woocommerce_add_to_cart_redirect', 'stay_on_current_page');
 function stay_on_current_page($url) {
     return wc_get_raw_referer(); // Quay lại trang trước đó (nơi chứa nút bấm)
 }
+function add_nav_link_class_to_woocommerce_buttons($button) {
+    // Kiểm tra và thêm class 'nav-link' vào các nút
+    $button = str_replace('class="', 'class="nav-link ', $button);
+    return $button;
+}
 
+// Áp dụng cho các nút trong danh sách sản phẩm (Add to cart)
+add_filter('woocommerce_loop_add_to_cart_link', 'add_nav_link_class_to_woocommerce_buttons', 10, 1);
+
+// Áp dụng cho nút trên trang chi tiết sản phẩm (Add to cart)
+add_filter('woocommerce_product_add_to_cart_link', 'add_nav_link_class_to_woocommerce_buttons', 10, 1);
+
+// Áp dụng cho nút xóa sản phẩm khỏi giỏ hàng
+add_filter('woocommerce_cart_item_remove_link', 'add_nav_link_class_to_woocommerce_buttons', 10, 1);
+
+// Áp dụng cho nút "Thanh toán" trên trang giỏ hàng/checkout
+function add_nav_link_class_to_order_button_html($button_html) {
+    $button_html = str_replace('class="', 'class="nav-link ', $button_html);
+    return $button_html;
+}
+add_filter('woocommerce_order_button_html', 'add_nav_link_class_to_order_button_html', 10, 1);
+
+// Áp dụng cho các nút cập nhật giỏ hàng, tiếp tục mua sắm, vv.
+function add_nav_link_class_to_cart_actions($button_html) {
+    $button_html = str_replace('class="', 'class="nav-link ', $button_html);
+    return $button_html;
+}
+add_filter('woocommerce_cart_actions', 'add_nav_link_class_to_cart_actions', 10, 1);
