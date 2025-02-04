@@ -1,0 +1,26 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "mycred-gb-blocks/mycred-buy-pending",
+    "title": "Buy Pending",
+    "category": "mycred",
+    "icon": "clock",
+    "description": "A block to manage pending purchases for points using the MyCred plugin.",
+    "attributes": {
+      "ctype": {
+        "type": "string",
+        "default": ""
+      },
+      "pay_now": {
+        "type": "string",
+        "default": "Pay Now"
+      },
+      "cancel": {
+        "type": "string",
+        "default": "Cancel"
+      }
+    },
+    "textdomain": "mycred",
+    "editorScript": "file:./index.js",
+    "render": "php:MG_Blocks\\mycred_buy_pending_block::render_block"
+}

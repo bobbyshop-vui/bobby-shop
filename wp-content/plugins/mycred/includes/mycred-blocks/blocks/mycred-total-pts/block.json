@@ -1,0 +1,39 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "mycred-gb-blocks/mycred-total-pts",
+    "title": "Total Points",
+    "category": "mycred",
+    "icon": "chart-bar",
+    "description": "Displays the total points accumulated based on filters like user, reference, and reference ID.",
+    "attributes": {
+      "type": {
+        "type": "string",
+        "description": "The point type to add up.",
+        "default": ""
+      },
+      "ref": {
+        "type": "string",
+        "description": "Filter results based on a single reference or a list of references.",
+        "default": ""
+      },
+      "ref_id": {
+        "type": "string",
+        "description": "Option to filter results based on a reference ID.",
+        "default": ""
+      },
+      "user_id": {
+        "type": "string",
+        "description": "Specify the user ID for point accumulation. Use 'current' for the current user.",
+        "default": ""
+      },
+      "formatted": {
+        "type": "boolean",
+        "description": "Show results formatted with prefix/suffix or plain format.",
+        "default": true
+      }
+    },
+    "textdomain": "mycred",
+    "editorScript": "file:./index.js",
+    "render": "php:MG_Blocks\\mycred_total_points_block::render_block"
+}

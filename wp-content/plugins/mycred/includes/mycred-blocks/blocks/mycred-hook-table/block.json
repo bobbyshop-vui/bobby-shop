@@ -1,0 +1,42 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "mycred-gb-blocks/mycred-hook-table",
+    "title": "Hook Table",
+    "category": "mycred",
+    "icon": "table-row-after",
+    "description": "A block to display a table of active hooks for a specific point type with customizable text options.",
+    "attributes": {
+      "type": {
+        "type": "string",
+        "default": ""
+      },
+      "show_gains": {
+        "type": "boolean",
+        "default": true
+      },
+      "user": {
+        "type": "string",
+        "default": "-user-"
+      },
+      "post": {
+        "type": "string",
+        "default": "-post-"
+      },
+      "comment": {
+        "type": "string",
+        "default": "-comment-"
+      },
+      "amount": {
+        "type": "string",
+        "default": ""
+      },
+      "nothing": {
+        "type": "string",
+        "default": ""
+      }
+    },
+    "textdomain": "mycred",
+    "editorScript": "file:./index.js",
+    "render": "php:MG_Blocks\\mycred_hook_table_block::render_block"
+}

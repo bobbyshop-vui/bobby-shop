@@ -1,0 +1,34 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "mycred-gb-blocks/mycred-exchange",
+    "title": "Exchange",
+    "category": "mycred",
+    "icon": "exchange-alt",
+    "description": "A block for exchanging one point type to another in MyCred with customizable rates and settings.",
+    "attributes": {
+      "from": {
+        "type": "string",
+        "default": ""
+      },
+      "to": {
+        "type": "string",
+        "default": ""
+      },
+      "rate": {
+        "type": "string",
+        "default": "1"
+      },
+      "min": {
+        "type": "string",
+        "default": "1"
+      },
+      "button": {
+        "type": "string",
+        "default": "Exchange"
+      }
+    },
+    "textdomain": "mycred",
+    "editorScript": "file:./index.js",
+    "render": "php:MG_Blocks\\mycred_exchange_block::render_block"
+}

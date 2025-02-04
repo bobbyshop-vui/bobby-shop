@@ -79,7 +79,7 @@ namespace LoginCustomizer\Customizer\Panel;
 		$custom_css .= '}';
 
 		// Login Page Form CSS
-		$custom_css .= '#login form#loginform, #login form#registerform, #login form#lostpasswordform {';
+		$custom_css .= '#login form#loginform, #login form#registerform, #login form#lostpasswordform, #login form#resetpassform {';
 		if ( ! empty( $options['logincust_form_bg_image'] ) ) {
 			$custom_css .= 'background-image: url(" ' . $options['logincust_form_bg_image'] . ' ");';
 		}
@@ -140,7 +140,7 @@ namespace LoginCustomizer\Customizer\Panel;
 		}
 
 		// Login Page Fields CSS
-		$custom_css .= '#login form#loginform .input, #login form#registerform .input, #login form#lostpasswordform .input {';
+		$custom_css .= '#login form#loginform .input, #login form#registerform .input, #login form#lostpasswordform .input, #login form#resetpassform .input {';
 		if ( ! empty( $options['logincust_field_width'] ) ) {
 			$custom_css .= 'width: ' . $options['logincust_field_width'] . ';';
 		}
@@ -174,7 +174,7 @@ namespace LoginCustomizer\Customizer\Panel;
 		$custom_css .= '}';
 
 		// Login Form Labels CSS
-		$custom_css .= '#login form#loginform label, #login form#registerform label, #login form#lostpasswordform label {';
+		$custom_css .= '#login form#loginform label, #login form#registerform label, #login form#lostpasswordform label, #login form#resetpassform label {';
 		if ( ! empty( $options['logincust_field_label'] ) ) {
 			$custom_css .= 'color: ' . $options['logincust_field_label'] . ';';
 		}

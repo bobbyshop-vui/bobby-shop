@@ -1,0 +1,66 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "mycred-gb-blocks/mycred-instance-history",
+    "title": "Chart Instance History",
+    "category": "mycred",
+    "icon": "chart-bar",
+    "description": "A block to display an instance-specific history chart for MyCred points with detailed customization options.",
+    "attributes": {
+      "type": {
+        "type": "string",
+        "default": "line"
+      },
+      "ctype": {
+        "type": "string",
+        "default": "mycred_default"
+      },
+      "ref": {
+        "type": "string",
+        "default": ""
+      },
+      "period": {
+        "type": "string",
+        "default": "days"
+      },
+      "number": {
+        "type": "string",
+        "default": "10"
+      },
+      "order": {
+        "type": "string",
+        "default": "DESC"
+      },
+      "title": {
+        "type": "string",
+        "default": ""
+      },
+      "animate": {
+        "type": "string",
+        "default": "1"
+      },
+      "bezier": {
+        "type": "string",
+        "default": "1"
+      },
+      "labels": {
+        "type": "string",
+        "default": "1"
+      },
+      "legend": {
+        "type": "string",
+        "default": "1"
+      },
+      "width": {
+        "type": "string",
+        "default": ""
+      },
+      "height": {
+        "type": "string",
+        "default": ""
+      }
+    },
+    "textdomain": "mycred",
+    "editorScript": "file:./index.js",
+    "render": "php:MG_Blocks\\mycred_chart_instance_block::render_block"
+}

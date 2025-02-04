@@ -1,0 +1,46 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "mycred-gb-blocks/mycred-best-user",
+    "title": "Best User",
+    "category": "mycred",
+    "icon": "admin-users",
+    "description": "A block to display the best user based on MyCred plugin data with various customization options.",
+    "attributes": {
+      "ref": {
+        "type": "string",
+        "default": ""
+      },
+      "from": {
+        "type": "string",
+        "default": ""
+      },
+      "until": {
+        "type": "string",
+        "default": ""
+      },
+      "types": {
+        "type": "string",
+        "default": ""
+      },
+      "nothing": {
+        "type": "string",
+        "default": "No user found"
+      },
+      "order": {
+        "type": "string",
+        "default": "DESC"
+      },
+      "avatar": {
+        "type": "integer",
+        "default": 50
+      },
+      "content": {
+        "type": "string",
+        "default": "<div class=\"mycred-best-user\">%avatar%<h4>%display_name%</h4></div>"
+      }
+    },
+    "textdomain": "mycred",
+    "editorScript": "file:./index.js",
+    "render": "php:MG_Blocks\\mycred_best_user_block::render_block"
+}

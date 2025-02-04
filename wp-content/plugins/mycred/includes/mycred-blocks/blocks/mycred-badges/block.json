@@ -1,0 +1,22 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "mycred-gb-blocks/mycred-badges",
+    "title": "Badges",
+    "category": "mycred",
+    "icon": "awards",
+    "description": "A block to display MyCred badges with customizable width and height.",
+    "attributes": {
+      "width": {
+        "type": "string",
+        "default": "MYCRED_BADGE_WIDTH"
+      },
+      "height": {
+        "type": "string",
+        "default": "MYCRED_BADGE_HEIGHT"
+      }
+    },
+    "textdomain": "mycred",
+    "editorScript": "file:./index.js",
+    "render": "php:MG_Blocks\\mycred_badges_block::render_block"
+}

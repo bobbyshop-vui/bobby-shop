@@ -1,0 +1,70 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "mycred-gb-blocks/mycred-link",
+    "title": "Link",
+    "category": "mycred",
+    "icon": "admin-links",
+    "description": "A block to create a customizable MyCred link that awards points when clicked.",
+    "attributes": {
+      "href": {
+        "type": "string",
+        "default": ""
+      },
+      "amount": {
+        "type": "integer",
+        "default": 0
+      },
+      "ctype": {
+        "type": "string",
+        "default": ""
+      },
+      "id": {
+        "type": "string",
+        "default": ""
+      },
+      "rel": {
+        "type": "string",
+        "default": ""
+      },
+      "clss": {
+        "type": "string",
+        "default": ""
+      },
+      "title": {
+        "type": "string",
+        "default": ""
+      },
+      "target": {
+        "type": "string",
+        "default": ""
+      },
+      "style": {
+        "type": "string",
+        "default": ""
+      },
+      "hreflang": {
+        "type": "string",
+        "default": ""
+      },
+      "media": {
+        "type": "string",
+        "default": ""
+      },
+      "type": {
+        "type": "string",
+        "default": ""
+      },
+      "onclick": {
+        "type": "string",
+        "default": ""
+      },
+      "content": {
+        "type": "string",
+        "default": ""
+      }
+    },
+    "textdomain": "mycred",
+    "editorScript": "file:./index.js",
+    "render": "php:MG_Blocks\\mycred_link_block::render_block"
+}

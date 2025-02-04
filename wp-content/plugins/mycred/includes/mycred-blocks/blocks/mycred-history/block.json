@@ -1,0 +1,58 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "mycred-gb-blocks/mycred-history",
+    "title": "History",
+    "category": "mycred",
+    "icon": "list-view",
+    "description": "A block to display MyCred history logs with various filter and display options.",
+    "attributes": {
+      "user_id": {
+        "type": "string",
+        "default": ""
+      },
+      "number": {
+        "type": "integer",
+        "default": 10
+      },
+      "time": {
+        "type": "string",
+        "default": ""
+      },
+      "ref": {
+        "type": "string",
+        "default": ""
+      },
+      "order": {
+        "type": "string",
+        "default": "DESC"
+      },
+      "show_user": {
+        "type": "boolean",
+        "default": false
+      },
+      "show_nav": {
+        "type": "boolean",
+        "default": true
+      },
+      "login": {
+        "type": "string",
+        "default": ""
+      },
+      "type": {
+        "type": "string",
+        "default": ""
+      },
+      "pagination": {
+        "type": "integer",
+        "default": 10
+      },
+      "inlinenav": {
+        "type": "boolean",
+        "default": false
+      }
+    },
+    "textdomain": "mycred",
+    "editorScript": "file:./index.js",
+    "render": "php:MG_Blocks\\mycred_history_block::render_block"
+}

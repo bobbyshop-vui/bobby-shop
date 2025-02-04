@@ -1,0 +1,26 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "mycred-gb-blocks/mycred-load-coupon",
+    "title": "Load Coupon",
+    "category": "mycred",
+    "icon": "tickets-alt",
+    "description": "A block to create a form for loading and applying MyCred coupons.",
+    "attributes": {
+      "label": {
+        "type": "string",
+        "default": "Coupon"
+      },
+      "button": {
+        "type": "string",
+        "default": "Apply Coupon"
+      },
+      "placeholder": {
+        "type": "string",
+        "default": ""
+      }
+    },
+    "textdomain": "mycred",
+    "editorScript": "file:./index.js",
+    "render": "php:MG_Blocks\\mycred_load_coupon_block::render_block"
+}

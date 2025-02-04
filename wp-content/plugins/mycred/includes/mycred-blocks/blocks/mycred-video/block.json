@@ -1,0 +1,44 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "mycred-gb-blocks/mycred-video",
+    "title": "Video",
+    "category": "mycred",
+    "icon": "video-alt3",
+    "description": "A block to embed a video and award points based on specific logic (e.g., watching the video, watching full video, etc.).",
+    "attributes": {
+      "video_id": {
+        "type": "string",
+        "description": "The video ID to embed."
+      },
+      "width": {
+        "type": "string",
+        "default": "560",
+        "description": "The width of the video iframe."
+      },
+      "height": {
+        "type": "string",
+        "default": "315",
+        "description": "The height of the video iframe."
+      },
+      "ctype": {
+        "type": "string",
+        "description": "The point type associated with this video."
+      },
+      "amount": {
+        "type": "string",
+        "description": "The amount of points to award for watching the video."
+      },
+      "logic": {
+        "type": "string",
+        "description": "The logic for awarding points (e.g., 'play', 'full', 'interval')."
+      },
+      "interval": {
+        "type": "string",
+        "description": "The interval in seconds for awarding points (only used with 'interval' logic)."
+      }
+    },
+    "textdomain": "mycred",
+    "editorScript": "file:./index.js",
+    "render": "php:MG_Blocks\\mycred_video_block::render_block"
+}

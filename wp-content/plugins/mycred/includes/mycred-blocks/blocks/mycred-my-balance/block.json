@@ -1,0 +1,46 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "mycred-gb-blocks/mycred-my-balance",
+    "title": "My Balance",
+    "category": "mycred",
+    "icon": "money",
+    "description": "Display the current user’s balance or a specific user’s balance with customizable formatting and wrappers.",
+    "attributes": {
+      "user_id": {
+        "type": "string",
+        "default": "current"
+      },
+      "title": {
+        "type": "string",
+        "default": ""
+      },
+      "title_el": {
+        "type": "string",
+        "default": "h1"
+      },
+      "balance_el": {
+        "type": "string",
+        "default": "div"
+      },
+      "wrapper": {
+        "type": "boolean",
+        "default": true
+      },
+      "formatted": {
+        "type": "boolean",
+        "default": true
+      },
+      "type": {
+        "type": "string",
+        "default": ""
+      },
+      "content": {
+        "type": "string",
+        "default": ""
+      }
+    },
+    "textdomain": "mycred",
+    "editorScript": "file:./index.js",
+    "render": "php:MG_Blocks\\mycred_my_balance_block::render_block"
+}

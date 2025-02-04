@@ -1,0 +1,42 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "mycred-gb-blocks/mycred-give",
+    "title": "Give",
+    "category": "mycred",
+    "icon": "money",
+    "description": "A block to give points to users with customizable options like amount, user ID, and log entry.",
+    "attributes": {
+      "amount": {
+        "type": "string",
+        "default": ""
+      },
+      "user_id": {
+        "type": "string",
+        "default": ""
+      },
+      "log": {
+        "type": "string",
+        "default": ""
+      },
+      "ref": {
+        "type": "string",
+        "default": "give"
+      },
+      "limit": {
+        "type": "string",
+        "default": "0"
+      },
+      "type": {
+        "type": "string",
+        "default": ""
+      },
+      "content": {
+        "type": "string",
+        "default": ""
+      }
+    },
+    "textdomain": "mycred",
+    "editorScript": "file:./index.js",
+    "render": "php:MG_Blocks\\mycred_give_block::render_block"
+}

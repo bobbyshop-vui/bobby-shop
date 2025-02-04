@@ -1,0 +1,22 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "mycred-gb-blocks/mycred-affiliate-link",
+    "title": "Affiliate Link",
+    "category": "mycred",
+    "icon": "admin-links",
+    "description": "A block to display an affiliate link shortcode for the MyCred plugin.",
+    "attributes": {
+      "pt_type": {
+        "type": "string",
+        "default": ""
+      },
+      "url": {
+        "type": "string",
+        "default": ""
+      }
+    },
+    "textdomain": "mycred",
+    "editorScript": "file:./index.js",
+    "render": "php:MG_Blocks\\mycred_affiliate_link_block::render_block"
+}

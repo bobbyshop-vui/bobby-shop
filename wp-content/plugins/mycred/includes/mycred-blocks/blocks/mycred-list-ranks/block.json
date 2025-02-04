@@ -1,0 +1,26 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "mycred-gb-blocks/mycred-list-ranks",
+    "title": "List Ranks",
+    "category": "mycred",
+    "icon": "list-view",
+    "description": "A block to display a list of ranks based on MyCred point types.",
+    "attributes": {
+      "order": {
+        "type": "string",
+        "default": "DESC"
+      },
+      "ctype": {
+        "type": "string",
+        "default": ""
+      },
+      "wrap": {
+        "type": "string",
+        "default": "div"
+      }
+    },
+    "textdomain": "mycred",
+    "editorScript": "file:./index.js",
+    "render": "php:MG_Blocks\\mycred_list_ranks_block::render_block"
+}

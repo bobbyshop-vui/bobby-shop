@@ -1,0 +1,42 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "mycred-gb-blocks/mycred-buy-form",
+    "title": "Buy Form",
+    "category": "mycred",
+    "icon": "money-alt",
+    "description": "A block to create a buy form for purchasing points using the MyCred plugin.",
+    "attributes": {
+      "button": {
+        "type": "string",
+        "default": "Buy Now"
+      },
+      "gateway": {
+        "type": "string",
+        "default": ""
+      },
+      "ctype": {
+        "type": "string",
+        "default": ""
+      },
+      "amount": {
+        "type": "string",
+        "default": ""
+      },
+      "gift_to": {
+        "type": "string",
+        "default": ""
+      },
+      "gift_by": {
+        "type": "string",
+        "default": ""
+      },
+      "inline": {
+        "type": "boolean",
+        "default": false
+      }
+    },
+    "textdomain": "mycred",
+    "editorScript": "file:./index.js",
+    "render": "php:MG_Blocks\\mycred_buy_form_block::render_block"
+}

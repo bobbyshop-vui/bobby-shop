@@ -1,0 +1,42 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "mycred-gb-blocks/mycred-buy",
+    "title": "Buy",
+    "category": "mycred",
+    "icon": "cart",
+    "description": "A block to create a purchase link for points using the MyCred plugin.",
+    "attributes": {
+      "link_title": {
+        "type": "string",
+        "default": ""
+      },
+      "gateway": {
+        "type": "string",
+        "default": ""
+      },
+      "type": {
+        "type": "string",
+        "default": ""
+      },
+      "amount": {
+        "type": "string",
+        "default": ""
+      },
+      "gift_to": {
+        "type": "string",
+        "default": ""
+      },
+      "clss": {
+        "type": "string",
+        "default": "mycred-buy-link btn btn-primary btn-lg"
+      },
+      "login": {
+        "type": "string",
+        "default": "buyCRED Settings"
+      }
+    },
+    "textdomain": "mycred",
+    "editorScript": "file:./index.js",
+    "render": "php:MG_Blocks\\mycred_buy_block::render_block"
+}

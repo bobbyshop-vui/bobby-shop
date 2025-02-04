@@ -1,0 +1,68 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "mycred-gb-blocks/mycred-transfers",
+    "title": "Transfer",
+    "category": "mycred",
+    "icon": "arrow-down-alt",
+    "description": "A block to create a transfer form for users to transfer points to others.",
+    "attributes": {
+      "button": {
+        "type": "string",
+        "description": "Label for the transfer button."
+      },
+      "pay_to": {
+        "type": "string",
+        "description": "The recipient of the transfer. Can be left empty for user selection."
+      },
+      "show_balance": {
+        "type": "boolean",
+        "default": false,
+        "description": "Whether to show the current user's balance."
+      },
+      "show_limit": {
+        "type": "boolean",
+        "default": false,
+        "description": "Whether to show the current user's transfer limit."
+      },
+      "types": {
+        "type": "string",
+        "description": "Comma-separated list of point types that can be transferred."
+      },
+      "excluded": {
+        "type": "string",
+        "description": "Message to display when the user is excluded from making transfers."
+      },
+      "amount": {
+        "type": "integer",
+        "description": "Amount of points to be transferred."
+      },
+      "placeholder": {
+        "type": "string",
+        "description": "Placeholder text for the recipient input field."
+      },
+      "ref": {
+        "type": "string",
+        "default": "transfer",
+        "description": "Reference for the transfer. Used for logging purposes."
+      },
+      "recipient_label": {
+        "type": "string",
+        "default": "Recipient",
+        "description": "Label for the recipient field."
+      },
+      "amount_label": {
+        "type": "string",
+        "default": "Amount",
+        "description": "Label for the amount field."
+      },
+      "balance_label": {
+        "type": "string",
+        "default": "Balance",
+        "description": "Label for the balance field."
+      }
+    },
+    "textdomain": "mycred",
+    "editorScript": "file:./index.js",
+    "render": "php:MG_Blocks\\mycred_transfer_block::render_block"
+}

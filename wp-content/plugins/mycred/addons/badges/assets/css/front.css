@@ -1,0 +1,23 @@
+.mycred-users-badges .the-badge.vertical {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.mycred-users-badges .the-badge.horizontal {
+    display: inline-flex;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.mycred-users-badges .the-badge .mycred-badge-content {
+    display: table;
+    margin-left: 15px;
+}
+
+.mycred-users-badges .the-badge .mycred-badge-content h4.title {
+    margin: 0;
+}
+
+.mycred-users-badges .the-badge .mycred-badge-content p.excerpt {
+    margin: 10px 0 0 0;
+}

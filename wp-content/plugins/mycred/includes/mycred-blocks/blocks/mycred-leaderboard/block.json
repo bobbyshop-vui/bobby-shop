@@ -1,0 +1,62 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "mycred-gb-blocks/mycred-leaderboard",
+    "title": "Leaderboard",
+    "category": "mycred",
+    "icon": "trophy",
+    "description": "A block to display a customizable leaderboard for MyCred points.",
+    "attributes": {
+      "number": {
+        "type": "integer",
+        "default": 25
+      },
+      "order": {
+        "type": "string",
+        "default": "DESC"
+      },
+      "offset": {
+        "type": "string",
+        "default": "0"
+      },
+      "type": {
+        "type": "string",
+        "default": ""
+      },
+      "based_on": {
+        "type": "string",
+        "default": "balance"
+      },
+      "total": {
+        "type": "boolean",
+        "default": false
+      },
+      "wrap": {
+        "type": "string",
+        "default": "li"
+      },
+      "template": {
+        "type": "string",
+        "default": "#%position% %user_profile_link% %cred_f%"
+      },
+      "nothing": {
+        "type": "string",
+        "default": "Leaderboard is empty"
+      },
+      "current": {
+        "type": "boolean",
+        "default": false
+      },
+      "timeframe": {
+        "type": "string",
+        "default": ""
+      },
+      "exclude_zero": {
+        "type": "boolean",
+        "default": true
+      }
+    },
+    "textdomain": "mycred",
+    "editorScript": "file:./index.js",
+    "render": "php:MG_Blocks\\mycred_leaderboard_block::render_block"
+}

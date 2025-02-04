@@ -1,0 +1,32 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "mycred-gb-blocks/mycred-total-balance",
+    "title": "Total Balance",
+    "category": "mycred",
+    "icon": "money",
+    "description": "Displays the total balance for a user across point types with customization options.",
+    "attributes": {
+      "user_id": {
+        "type": "string",
+        "description": "User ID to fetch the balance for. Use 'current' for the current user."
+      },
+      "types": {
+        "type": "string",
+        "description": "Point types to include in the total balance calculation. Use 'all' for all point types."
+      },
+      "raw": {
+        "type": "boolean",
+        "default": false,
+        "description": "Return the raw amount without any formatting or HTML elements."
+      },
+      "total": {
+        "type": "boolean",
+        "default": false,
+        "description": "Include a total balance display in the output."
+      }
+    },
+    "textdomain": "mycred",
+    "editorScript": "file:./index.js",
+    "render": "php:MG_Blocks\\mycred_total_balance_block::render_block"
+}

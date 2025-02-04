@@ -26,10 +26,10 @@ define( 'WP_CACHE', true );
 define( 'DB_NAME', 'u126376622_H99JQ' );
 
 /** Database username */
-define( 'DB_USER', 'u126376622_xfKmm' );
+define( 'DB_USER', 'root' );
 
 /** Database password */
-define( 'DB_PASSWORD', 'QVKaAmNaTQ' );
+define( 'DB_PASSWORD', 'nhim1234' );
 
 /** Database hostname */
 define( 'DB_HOST', '127.0.0.1' );
@@ -89,13 +89,17 @@ $table_prefix = 'wp_';
  *
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
-define( 'WP_DEBUG', false );
-define( 'WP_DEBUG_LOG', false );
-define( 'WP_DEBUG_DISPLAY', false );
-
-
+define( 'WP_DEBUG', true );  // Bật chế độ debug
+define( 'WP_DEBUG_LOG', true );  // Ghi lỗi vào file debug.log
+define( 'WP_DEBUG_DISPLAY', false );  // Hiển thị lỗi trên trang web
+define('WP_HOME', 'http://localhost/bobbyshop');
+define('WP_SITEURL', 'http://localhost/bobbyshop');
+define('WP_MEMORY_LIMIT', '4096M');
+define('WP_MAX_MEMORY_LIMIT', '4G');
 define( 'FS_METHOD', 'direct' );
 define( 'WP_AUTO_UPDATE_CORE', 'minor' );
+set_time_limit(999999999); // Tăng giới hạn thời gian thực thi lên 300 giây
+
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */

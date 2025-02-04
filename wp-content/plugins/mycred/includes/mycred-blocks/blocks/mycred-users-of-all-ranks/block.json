@@ -1,0 +1,46 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "mycred-gb-blocks/mycred-users-of-all-ranks",
+    "title": "Users of all ranks",
+    "category": "mycred",
+    "icon": "admin-users",
+    "description": "A block to display a list of users for a specific rank.",
+    "attributes": {
+      "login": {
+        "type": "string",
+        "description": "Message to display for logged out users."
+      },
+      "number": {
+        "type": "string",
+        "description": "The number of users to display. Use -1 for all users of this rank."
+      },
+      "show_logo": {
+        "type": "boolean",
+        "default": true,
+        "description": "Whether to display the rank logo."
+      },
+      "logo_size": {
+        "type": "string",
+        "default": "post-thumbnail",
+        "description": "Size of the rank logo to display."
+      },
+      "wrap": {
+        "type": "string",
+        "default": "div",
+        "description": "The HTML element to wrap each row of users. Defaults to div."
+      },
+      "nothing": {
+        "type": "string",
+        "default": "No users found with this rank",
+        "description": "Message to display when no users are found for the specified rank."
+      },
+      "ctype": {
+        "type": "string",
+        "description": "The point type to filter users by."
+      }
+    },
+    "textdomain": "mycred",
+    "editorScript": "file:./index.js",
+    "render": "php:MG_Blocks\\mycred_users_of_all_ranks_block::render_block"
+}

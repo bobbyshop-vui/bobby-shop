@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "mycred-gb-blocks/mycred-my-badges",
+    "title": "My Badges",
+    "category": "mycred",
+    "icon": "awards",
+    "description": "A block to display badges earned by a user or all available badges.",
+    "attributes": {
+      "show": {
+        "type": "string",
+        "default": "earned"
+      },
+      "width": {
+        "type": "string",
+        "default": "MYCRED_BADGE_WIDTH"
+      },
+      "height": {
+        "type": "string",
+        "default": "MYCRED_BADGE_HEIGHT"
+      },
+      "user_id": {
+        "type": "string",
+        "default": "current"
+      }
+    },
+    "textdomain": "mycred",
+    "editorScript": "file:./index.js",
+    "render": "php:MG_Blocks\\mycred_my_badges_block::render_block"
+}

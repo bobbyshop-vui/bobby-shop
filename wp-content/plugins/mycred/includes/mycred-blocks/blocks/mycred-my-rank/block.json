@@ -1,0 +1,35 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "mycred-gb-blocks/mycred-my-rank",
+    "title": "My Rank",
+    "category": "mycred",
+    "icon": "trophy",
+    "description": "Display the rank of a user based on the selected point type.",
+    "attributes": {
+      "user_id": {
+        "type": "string"
+      },
+      "show_title": {
+        "type": "boolean",
+        "default": true
+      },
+      "show_logo": {
+        "type": "boolean"
+      },
+      "logo_size": {
+        "type": "string",
+        "default": "post-thumbnail"
+      },
+      "first": {
+        "type": "string",
+        "default": "logo"
+      },
+      "ctype": {
+        "type": "string"
+      }
+    },
+    "textdomain": "mycred",
+    "editorScript": "file:./index.js",
+    "render": "php:MG_Blocks\\mycred_my_rank_block::render_block"
+}

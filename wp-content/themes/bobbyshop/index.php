@@ -241,7 +241,7 @@ if ($page_id) {
                     <a class="nav-link" href="?posts=">Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="?page_id=69">Account</a>
+                    <a class="nav-link" href="?page_id=11">Account</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0" action="<?php echo esc_url(home_url('/')); ?>" method="GET">
@@ -282,11 +282,6 @@ if ($page_id) {
                     else :
                         ?>
                         <p>No posts found.</p>
-                        <style>
-                            .row {
-                                display: none;
-                            }
-                        </style>
                         <?php
                     endif;
                 }
@@ -342,7 +337,11 @@ if ($page_id) {
     <?php if (isset($_GET['posts']) || isset($_GET['p'])): ?>
         <div class="col-lg-3 col-md-4">
             <div class="sidebarad">
-                <?php the_ad(224); // Hiển thị quảng cáo với ID là 224 ?>
+            <div style="background-color: #FFD700; width: 300px; height: 600px; display: flex; justify-content: center; align-items: center; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                <div style="writing-mode: vertical-rl; text-orientation: upright; font-size: 24px; font-weight: bold; text-align: center; color: #333; font-family: Arial, sans-serif;">
+                    Bobby Shop<br>Khai Trương
+                </div>
+            </div>
             </div>
         </div>
     <?php endif; ?>
@@ -355,7 +354,7 @@ if ($page_id) {
                 // Sử dụng shortcode để hiển thị sản phẩm trong danh mục
                 echo do_shortcode('[products category="' . esc_attr($product_cat) . '"]');
             }
-            function display_product_by_slug() {
+function display_product_by_slug() {
                 // Lấy slug sản phẩm từ URL
                 $slug = get_query_var('product');
             
@@ -413,7 +412,6 @@ if ($page_id) {
                                     <!-- Các nút thêm vào giỏ và mua ngay -->
                                     <div class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
                                         <a href="<?php echo esc_url($product->add_to_cart_url()); ?>" class="btn btn-success"><?php esc_html_e('Cho vào giỏ hàng', 'woocommerce'); ?></a>
-                                        <a href="<?php echo esc_url($product->add_to_cart_url()); ?>" class="btn btn-primary"><?php esc_html_e('Mua ngay', 'woocommerce'); ?></a>
                                     </div>
                                 </div>
                             </div>
@@ -499,29 +497,30 @@ if ($page_id) {
                                                     $product_id  // Sử dụng $product_id để lấy bình luận cho sản phẩm
                                                 )
                                             );
-                                        
-                                            // Kiểm tra và hiển thị bình luận
                                             if ($comments) {
                                                 foreach ($comments as $comment) {
                                                     echo '<li class="comment">';
                                                     echo '<div class="comment-author">' . esc_html($comment->comment_author) . '</div>';
                                                     echo '<div class="comment-content">' . esc_html($comment->comment_content) . '</div>';
-                                        
+                                            
                                                     // Hiển thị đánh giá sao nếu có
                                                     if ($comment->rating) {
                                                         echo '<div class="comment-rating">';
                                                         echo str_repeat('★', intval($comment->rating)); // Hiển thị số sao
                                                         echo '</div>';
                                                     }
-                                        
-                                                    // Thêm nút chỉnh sửa nếu người dùng là chủ của bình luận hoặc admin
-                                                    if (is_user_logged_in() && (get_current_user_id() == $comment->comment_user_id || current_user_can('administrator'))) {
+                                            
+                                                    // Thêm nút chỉnh sửa và xóa nếu người dùng là chủ của bình luận hoặc admin
+                                                    if (is_user_logged_in() && (get_current_user_id() == $comment->user_id || current_user_can('administrator'))) {
+                                                        // Nút chỉnh sửa
                                                         $edit_url = get_edit_comment_link($comment->comment_ID); // Lấy URL chỉnh sửa bình luận
                                                         echo '<div class="comment-edit-link">';
-                                                        echo '<a href="' . esc_url($edit_url) . '">' . esc_html__('Chỉnh sửa', 'woocommerce') . '</a>';
+                                                        if (current_user_can('administrator')) { // Sửa lỗi ở đây, cần dấu ngoặc đơn
+                                                            echo '<a href="' . esc_url($edit_url) . '">' . esc_html__('Chỉnh sửa', 'woocommerce') . '</a>';
+                                                        }
                                                         echo '</div>';
                                                     }
-                                        
+                                            
                                                     echo '</li>';
                                                 }
                                             } else {
@@ -778,7 +777,11 @@ if ($page_id) {
         ?>
             <div class="d-flex justify-content-end">
                 <div class="sidebarad p-2 ms-auto">
-                    <?php the_ad(224); // Hiển thị quảng cáo với ID là 224 ?>
+                <div style="background-color: #FFD700; width: 300px; height: 600px; display: flex; justify-content: center; align-items: center; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                    <div style="writing-mode: vertical-rl; text-orientation: upright; font-size: 24px; font-weight: bold; text-align: center; color: #333; font-family: Arial, sans-serif;">
+                        Bobby Shop<br>Khai Trương
+                    </div>
+                </div>
                 </div>
             </div>
         <?php endif; ?>

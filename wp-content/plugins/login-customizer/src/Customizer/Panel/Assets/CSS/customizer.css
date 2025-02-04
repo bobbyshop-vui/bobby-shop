@@ -9,3 +9,14 @@
 .customize-control-o2-range-slider input[type=radio]:checked.o2-range-slider-buttonset + label {
 	transform: translateY(0);
 }
+
+/* temporarily added for WordPress 6.7  */
+body.login div#login h1 a  {
+	background-repeat: no-repeat;
+	background-position: center;
+	text-indent: 100%;
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+	margin-inline: auto;
+}

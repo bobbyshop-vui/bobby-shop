@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "mycred-gb-blocks/mycred-my-balance-converted",
+    "title": "My Balance Converted",
+    "category": "mycred",
+    "icon": "money",
+    "description": "Display the converted balance of the user with a specified conversion rate, prefix, and suffix.",
+    "attributes": {
+      "ctype": {
+        "type": "string",
+        "default": "mycred_default"
+      },
+      "rate": {
+        "type": "number",
+        "default": 1
+      },
+      "prefix": {
+        "type": "string",
+        "default": ""
+      },
+      "suffix": {
+        "type": "string",
+        "default": ""
+      }
+    },
+    "textdomain": "mycred",
+    "editorScript": "file:./index.js",
+    "render": "php:MG_Blocks\\mycred_my_balance_converted_block::render_block"
+}

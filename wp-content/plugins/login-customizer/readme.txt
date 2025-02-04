@@ -1,11 +1,11 @@
 === Custom Login Page Customizer ===
 Requires at least: 4.0
-Tested up to: 6.6
+Tested up to: 6.7
 Contributors: hardeepasrani, hiddenpearls
 Donate link: https://wpbrigade.com/go/donate-login-customizer
 Author URI: https://loginpress.pro/?utm_source=login-customizer-lite&utm_medium=author-url-link
-Tags: login, customizer, logo, login logo, login customizer, login page,admin, branding, customization, custom login, error, login error, custom login pro
-Stable tag: 2.4.0
+Tags: login, customizer, wp login, login page, custom login
+Stable tag: 2.4.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -105,10 +105,14 @@ Please visit <a target="_blank" rel="nofollow" href="https://loginpress.pro/?utm
 
 == Upgrade Notice ==
 
-= 2.4.0 =
-* Update immediately - compatible with 6.6
+= 2.4.1 =
+* Update immediately - compatible with 6.7
 
 == Changelog ==
+
+= 2.4.1 – 2024-11-18 = 
+* Bugfix: Apply Customized style on the Password Reset page.
+* Compatibility: Compatible with WordPress 6.7
 
 = 2.4.0 – 2024-07-08 =
 * Bugfix: Remove the depreciated warning from login customizer.

@@ -1,0 +1,58 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "mycred-gb-blocks/mycred-chart-top-balance",
+    "title": "Chart Top Balance",
+    "category": "mycred",
+    "icon": "chart-bar",
+    "description": "A block to display a chart of the top MyCred balances with customizable settings.",
+    "attributes": {
+      "type": {
+        "type": "string",
+        "default": "bar"
+      },
+      "ctype": {
+        "type": "string",
+        "default": ""
+      },
+      "number": {
+        "type": "string",
+        "default": "10"
+      },
+      "order": {
+        "type": "string",
+        "default": "DESC"
+      },
+      "title": {
+        "type": "string",
+        "default": ""
+      },
+      "animate": {
+        "type": "string",
+        "default": "1"
+      },
+      "bezier": {
+        "type": "string",
+        "default": "1"
+      },
+      "labels": {
+        "type": "string",
+        "default": "1"
+      },
+      "legend": {
+        "type": "string",
+        "default": "1"
+      },
+      "width": {
+        "type": "string",
+        "default": ""
+      },
+      "height": {
+        "type": "string",
+        "default": ""
+      }
+    },
+    "textdomain": "mycred",
+    "editorScript": "file:./index.js",
+    "render": "php:MG_Blocks\\mycred_chart_top_balance_block::render_block"
+}

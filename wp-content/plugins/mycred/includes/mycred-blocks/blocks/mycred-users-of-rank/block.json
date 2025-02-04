@@ -1,0 +1,50 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "mycred-gb-blocks/mycred-users-of-rank",
+    "title": "Users of Rank",
+    "category": "mycred",
+    "icon": "admin-users",
+    "description": "A block to display a list of users for a specific rank.",
+    "attributes": {
+      "rank_id": {
+        "type": "string",
+        "description": "The rank to list users for."
+      },
+      "login": {
+        "type": "string",
+        "description": "Message to show for logged out users."
+      },
+      "number": {
+        "type": "string",
+        "default": "10",
+        "description": "The number of users to display. Use -1 for all users of the rank."
+      },
+      "wrap": {
+        "type": "string",
+        "default": "1",
+        "description": "The HTML element to wrap each row of users. Defaults to 1 (div)."
+      },
+      "col": {
+        "type": "string",
+        "default": "1",
+        "description": "The number of columns to use when wrapping users in a table."
+      },
+      "nothing": {
+        "type": "string",
+        "default": "No users found with this rank",
+        "description": "Message to display when no users are found for the rank."
+      },
+      "order": {
+        "type": "string",
+        "description": "Order of the users, either ascending or descending based on balance."
+      },
+      "ctype": {
+        "type": "string",
+        "description": "The point type to filter users by."
+      }
+    },
+    "textdomain": "mycred",
+    "editorScript": "file:./index.js",
+    "render": "php:MG_Blocks\\mycred_users_of_rank_block::render_block"
+}

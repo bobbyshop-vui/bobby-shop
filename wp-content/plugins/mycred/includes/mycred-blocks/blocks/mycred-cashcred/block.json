@@ -1,0 +1,34 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "mycred-gb-blocks/mycred-cashcred",
+    "title": "Cashcred",
+    "category": "mycred",
+    "icon": "money",
+    "description": "A block to create a Cashcred withdrawal form for points using the MyCred plugin.",
+    "attributes": {
+      "button": {
+        "type": "string",
+        "default": "Submit Request"
+      },
+      "gateways": {
+        "type": "array",
+        "default": []
+      },
+      "types": {
+        "type": "array",
+        "default": []
+      },
+      "excluded": {
+        "type": "string",
+        "default": "You have excluded from this point type"
+      },
+      "insufficient": {
+        "type": "string",
+        "default": "Insufficient Points for Withdrawal."
+      }
+    },
+    "textdomain": "mycred",
+    "editorScript": "file:./index.js",
+    "render": "php:MG_Blocks\\mycred_cashcred_block::render_block"
+}

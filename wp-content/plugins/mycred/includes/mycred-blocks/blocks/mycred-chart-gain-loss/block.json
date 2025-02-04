@@ -1,0 +1,58 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "mycred-gb-blocks/mycred-chart-gain-loss",
+    "title": "Chart Gain/Loss",
+    "category": "mycred",
+    "icon": "chart-area",
+    "description": "A block to display gain and loss charts for MyCred points with customizable chart settings.",
+    "attributes": {
+      "type": {
+        "type": "string",
+        "default": "pie"
+      },
+      "ctype": {
+        "type": "string",
+        "default": "mycred_default"
+      },
+      "title": {
+        "type": "string",
+        "default": ""
+      },
+      "animate": {
+        "type": "string",
+        "default": "1"
+      },
+      "bezier": {
+        "type": "string",
+        "default": "1"
+      },
+      "labels": {
+        "type": "string",
+        "default": "1"
+      },
+      "legend": {
+        "type": "string",
+        "default": "1"
+      },
+      "width": {
+        "type": "string",
+        "default": ""
+      },
+      "height": {
+        "type": "string",
+        "default": ""
+      },
+      "gains": {
+        "type": "string",
+        "default": "Gains"
+      },
+      "losses": {
+        "type": "string",
+        "default": "Losses"
+      }
+    },
+    "textdomain": "mycred",
+    "editorScript": "file:./index.js",
+    "render": "php:MG_Blocks\\mycred_chart_gain_loss_block::render_block"
+}

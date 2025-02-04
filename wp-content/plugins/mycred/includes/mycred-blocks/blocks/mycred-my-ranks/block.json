@@ -1,0 +1,34 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "mycred-gb-blocks/mycred-my-ranks",
+    "title": "My Ranks",
+    "description": "This Block allows you to show all ranks a user currently has. Note that this is only usable when you have ranks for multiple point types.",
+    "category": "mycred",
+    "icon": "star-filled",
+    "attributes": {
+        "user_id": {
+            "type": "string"
+        },
+        "show_title": {
+            "type": "boolean",
+            "default": true
+        },
+            "show_logo": {
+            "type": "boolean"
+        },
+        "logo_size": {
+            "type": "string",
+            "default": "post-thumbnail"
+        },
+        "first": {
+            "type": "string",
+            "default": "logo"
+        },
+        "ctype": {
+            "type": "string"
+        }
+    },
+    "editorScript": "file:./index.js",
+    "render": "php:MG_Blocks\\mycred_my_ranks_block::render_block"
+}

@@ -1,0 +1,46 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "mycred-gb-blocks/mycred-chart-circulation",
+    "title": "Chart Circulation",
+    "category": "mycred",
+    "icon": "chart-pie",
+    "description": "A block to display circulation charts for MyCred points with various customizable chart types.",
+    "attributes": {
+      "type": {
+        "type": "string",
+        "default": "pie"
+      },
+      "title": {
+        "type": "string",
+        "default": ""
+      },
+      "animate": {
+        "type": "string",
+        "default": "1"
+      },
+      "bezier": {
+        "type": "string",
+        "default": "1"
+      },
+      "labels": {
+        "type": "string",
+        "default": "1"
+      },
+      "legend": {
+        "type": "string",
+        "default": "1"
+      },
+      "width": {
+        "type": "string",
+        "default": ""
+      },
+      "height": {
+        "type": "string",
+        "default": ""
+      }
+    },
+    "textdomain": "mycred",
+    "editorScript": "file:./index.js",
+    "render": "php:MG_Blocks\\mycred_chart_circulation_block::render_block"
+}
