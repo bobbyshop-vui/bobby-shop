@@ -243,6 +243,9 @@ if ($page_id) {
                 <li class="nav-item">
                     <a class="nav-link" href="?page_id=11">Account</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="?page_id=418">Chat</a>
+                </li>
             </ul>
             <form class="form-inline my-2 my-lg-0" action="<?php echo esc_url(home_url('/')); ?>" method="GET">
                 <input class="form-control mr-sm-2" type="search" name="s" placeholder="Tìm kiếm sản phẩm..." aria-label="Tìm kiếm sản phẩm" value="<?php echo esc_attr($search_query); ?>">
